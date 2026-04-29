@@ -1,6 +1,6 @@
 # 👋 Welcome to My Professional Profile
 
-I'm **Jonathan Douglas Works (Doug)** — a cybersecurity workflow architect, programmer, and data analyst focused on building secure, scalable, and audit‑ready solutions. I combine hands‑on technical skills with structured, reproducible processes to support mission‑driven organizations and enterprise environments.
+I'm **Doug Works** — a cybersecurity workflow architect, programmer, and data analyst focused on building secure, scalable, and audit‑ready solutions. I combine hands‑on technical skills with structured, reproducible processes to support mission‑driven organizations and enterprise environments.
 
 ---
 
