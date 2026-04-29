@@ -22,7 +22,7 @@ I'm **Jonathan Douglas Works (Doug)** — a cybersecurity workflow architect, pr
 ---
 
 ## 🎓 Education
-- Master of Professional Studies — *Cybersecurity Analytics & Operations*  
+- Master of Professional Studies — *Cybersecurity Analytics & Operations*  (Projected Spring 2027)
 - Graduate Certificate — *Information Systems Cybersecurity*  
 - MS — *Information Systems*  
 - BS — *Computer Science & Applied Mathematics*  
@@ -36,8 +36,8 @@ I support non‑profit organizations by designing secure workflows, building tec
 
 ## 📫 Contact
 - **GitHub:** [github.com/jdouglasworks](https://github.com/jdouglasworks)  
-- **LinkedIn:** *(add your link here)*  
-- **Email:** *(optional)*  
+- **LinkedIn:** [https://www.linkedin.com/in/dworks/]
+- **Email:** *dougworks@freeforcharity.org*  
 
 ---
 
