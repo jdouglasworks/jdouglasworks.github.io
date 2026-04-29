@@ -36,7 +36,7 @@ I support non‑profit organizations by designing secure workflows, building tec
 
 ## 📫 Contact
 - **GitHub:** [github.com/jdouglasworks](https://github.com/jdouglasworks)  
-- **LinkedIn:** [https://www.linkedin.com/in/dworks/]
+- **LinkedIn:** https://www.linkedin.com/in/dworks/
 - **Email:** *dougworks@freeforcharity.org*  
 
 ---
