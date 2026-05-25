@@ -3,8 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Security Acknowledgements | Free For Charity',
-  description: 'Security Acknowledgements for Free For Charity website',
+  title: 'Security Acknowledgements | J. Douglas Works',
+  description: 'Security Acknowledgements for jdouglasworks.github.io',
 }
 
 const index = () => {
@@ -16,10 +16,10 @@ const index = () => {
             Security Acknowledgements
           </h2>
           <p className="mb-[20px] pb-[10px] text-[14px] font-[500] leading-[25px] text-[#666]">
-            Free For Charity would like to extend our sincere gratitude to the following security
-            researchers for their invaluable contributions in helping us keep our platform safe. By
+            J. Douglas Works would like to extend sincere gratitude to the following security
+            researchers for their invaluable contributions in helping keep this site safe. By
             responsibly disclosing vulnerabilities, they have played a crucial role in protecting
-            our users and our data.
+            visitors and data.
           </p>
           <div
             className="bg-[#f9f9f9] border-l-[5px] border-[#cccccc] p-[20px] mt-[30px] mb-[30px]"

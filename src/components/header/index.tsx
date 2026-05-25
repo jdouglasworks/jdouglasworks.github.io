@@ -23,12 +23,11 @@ const Header: React.FC = () => {
   const menuItems: MenuItem[] = useMemo(
     () => [
       { label: 'Home', path: '/#hero' },
-      { label: 'Mission', path: '/#mission' },
-      { label: 'Programs', path: '/#programs' },
-      { label: 'Volunteer', path: '/#volunteer' },
-      { label: 'Donate', path: '/#donate' },
+      { label: 'About', path: '/#about' },
+      { label: 'Skills', path: '/#skills' },
+      { label: 'Experience', path: '/#experience' },
       { label: 'FAQ', path: '/#faq' },
-      { label: 'Team', path: '/#team' },
+      { label: 'Contact', path: '/#team' },
     ],
     []
   )
@@ -97,11 +96,11 @@ const Header: React.FC = () => {
               className={`transition-all duration-300 ${isScrolled ? 'w-[110px]' : 'w-[150px]'}`}
             >
               <Link href="/" onClick={handleLinkClick} className="block">
-                <img
-                  src="https://freeforcharity.org/wp-content/uploads/2024/04/Screenshot_145.png"
-                  alt="Free For Charity"
-                  className={`transition-all duration-300 ${isScrolled ? 'h-7' : 'h-11'}`}
-                />
+                <span
+                  className={`font-bold tracking-tight text-gray-800 transition-all duration-300 ${isScrolled ? 'text-[15px]' : 'text-[18px]'}`}
+                >
+                  J. Douglas Works
+                </span>
               </Link>
             </div>
 

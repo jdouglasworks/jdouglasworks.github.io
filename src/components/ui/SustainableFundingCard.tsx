@@ -2,13 +2,15 @@ import Image from 'next/image'
 import React from 'react'
 
 interface SustainableFundingCardProps {
-  imageUrl: string
+  imageUrl?: string
+  icon?: React.ReactNode
   title: string
   text: string
 }
 
 export const SustainableFundingCard: React.FC<SustainableFundingCardProps> = ({
   imageUrl,
+  icon,
   title,
   text,
 }) => {
@@ -16,9 +18,15 @@ export const SustainableFundingCard: React.FC<SustainableFundingCardProps> = ({
     <div className="py-[30px] px-[16px] xl:w-[570px] rounded-[16px] overflow-hidden border-[3px] border-[#2A6682] h-full">
       {/* Image/Icon Section */}
       <div className="flex justify-center">
-        <div className="relative w-[60px] h-[60px]">
-          <Image src={imageUrl} alt={title} fill className="object-contain drop-shadow-md" />
-        </div>
+        {icon ? (
+          <div className="w-[60px] h-[60px] flex items-center justify-center text-[#2A6682]">
+            {icon}
+          </div>
+        ) : imageUrl ? (
+          <div className="relative w-[60px] h-[60px]">
+            <Image src={imageUrl} alt={title} fill className="object-contain drop-shadow-md" />
+          </div>
+        ) : null}
       </div>
 
       {/* Content Section */}

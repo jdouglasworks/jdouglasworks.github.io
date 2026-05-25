@@ -59,31 +59,30 @@ export type SiteConfig = {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Free For Charity',
-  tagline: 'Reduce Costs, Increase Impact',
+  name: 'J. Douglas Works',
+  tagline: 'Cybersecurity Professional',
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'J. Douglas Works is a cybersecurity professional with 20+ years of DoD programming, project management, and information security experience.',
   shortDescription:
-    'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-  url: 'https://ffcworkingsite1.org',
-  twitterHandle: '@freeforcharity',
-  contactEmail: 'security@freeforcharity.org',
+    'Cybersecurity professional with 20+ years of DoD programming, project management, and information security experience.',
+  url: 'https://jdouglasworks.github.io',
+  twitterHandle: '',
+  contactEmail: 'dougworks@freeforcharity.org',
   keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'cybersecurity',
+    'information security',
+    'DoD',
+    'RMF',
+    'FISMA',
+    'project management',
+    'CISSP',
+    'portfolio',
   ],
   themeColor: '#ffffff',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
   social: [
-    { label: 'Facebook', href: 'https://www.facebook.com/freeforcharity' },
-    { label: 'X (Twitter)', href: 'https://x.com/freeforcharity1' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/freeforcharity/' },
-    { label: 'GitHub', href: 'https://github.com/FreeForCharity/FFC_Single_Page_Template' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dworks/' },
+    { label: 'GitHub', href: 'https://github.com/jdouglasworks' },
   ],
 }
 
