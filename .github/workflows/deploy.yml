@@ -64,19 +64,21 @@ jobs:
       - name: Determine base path
         id: basepath
         # Custom-domain deploys serve from the origin root (no subpath), so
-        # NEXT_PUBLIC_BASE_PATH must be empty. Subpath-only deploys (no
-        # CNAME) need /<repo-name>. Empirically the live site at
-        # ffcworkingsite1.org/manifest.webmanifest referenced
-        # /FFC_Single_Page_Template/android-chrome-*.png because the build
-        # always set the subpath, but those paths 404 on the custom domain.
-        # This step picks the right value based on whether public/CNAME
-        # exists.
+        # NEXT_PUBLIC_BASE_PATH must be empty. User/org GitHub Pages sites
+        # ({owner}.github.io repos) also deploy at the root — no subpath.
+        # Subpath-only deploys (no CNAME, not a user/org site) need /<repo-name>.
+        # This step picks the right value based on whether public/CNAME exists
+        # OR the repo is a user/org Pages site.
         run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
           if [ -s "public/CNAME" ]; then
             echo "Using empty basePath (public/CNAME present: $(cat public/CNAME))"
             echo "value=" >> "$GITHUB_OUTPUT"
+          elif [ "$REPO_NAME" = "${OWNER}.github.io" ]; then
+            echo "Using empty basePath (user/org Pages site — always deploys at root)"
+            echo "value=" >> "$GITHUB_OUTPUT"
           else
-            REPO_NAME="${GITHUB_REPOSITORY#*/}"
             echo "Using /$REPO_NAME basePath (no CNAME — github.io subpath deploy)"
             echo "value=/$REPO_NAME" >> "$GITHUB_OUTPUT"
           fi
