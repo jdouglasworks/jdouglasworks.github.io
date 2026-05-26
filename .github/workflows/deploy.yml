@@ -72,10 +72,12 @@ jobs:
         run: |
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
           OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO_NAME_LC="${REPO_NAME,,}"
+          OWNER_LC="${OWNER,,}"
           if [ -s "public/CNAME" ]; then
             echo "Using empty basePath (public/CNAME present: $(cat public/CNAME))"
             echo "value=" >> "$GITHUB_OUTPUT"
-          elif [ "$REPO_NAME" = "${OWNER}.github.io" ]; then
+          elif [ "$REPO_NAME_LC" = "${OWNER_LC}.github.io" ]; then
             echo "Using empty basePath (user/org Pages site — always deploys at root)"
             echo "value=" >> "$GITHUB_OUTPUT"
           else
