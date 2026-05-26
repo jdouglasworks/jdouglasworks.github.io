@@ -13,9 +13,9 @@ describe('Footer component', () => {
     expect(footer).toBeInTheDocument()
   })
 
-  it('should display Endorsements section', () => {
+  it('should display the site name in footer', () => {
     render(<Footer />)
-    expect(screen.getByText('Endorsements')).toBeInTheDocument()
+    expect(screen.getByText('J. Douglas Works')).toBeInTheDocument()
   })
 
   it('should display Quick Links section', () => {
@@ -23,9 +23,9 @@ describe('Footer component', () => {
     expect(screen.getByText('Quick Links')).toBeInTheDocument()
   })
 
-  it('should display Contact Us section with contact information', () => {
+  it('should display Contact section heading', () => {
     render(<Footer />)
-    expect(screen.getByText('Contact Us')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Contact' })).toBeInTheDocument()
   })
 
   it('should have social media links', () => {
@@ -41,10 +41,9 @@ describe('Footer component', () => {
     expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
   })
 
-  it('should have GuideStar profile link', () => {
+  it('should have legal links in footer', () => {
     render(<Footer />)
-    const guidestarLink = screen.getByText(/GuideStar Profile/i)
-    expect(guidestarLink).toBeInTheDocument()
+    expect(screen.getByText(/Privacy Policy/i)).toBeInTheDocument()
   })
 
   it('should have email contact link', () => {

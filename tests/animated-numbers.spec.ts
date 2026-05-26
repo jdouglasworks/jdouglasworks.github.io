@@ -68,7 +68,7 @@ test.describe('Results 2023 Animated Numbers', () => {
     await expect(firstCardNumber).toContainText(firstStat.value, { timeout: 5000 })
 
     // Scroll away and back
-    await page.locator('h1:has-text("Welcome to")').scrollIntoViewIfNeeded()
+    await page.locator('h1:has-text("J. Douglas Works")').scrollIntoViewIfNeeded()
     await resultsHeading.scrollIntoViewIfNeeded()
 
     // Value should still be the final animated value (not reset to 0)

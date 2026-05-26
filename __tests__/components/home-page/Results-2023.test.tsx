@@ -33,12 +33,14 @@ import Results from '../../../src/components/home-page/Results-2023'
 describe('Results-2023', () => {
   it('renders the section heading', () => {
     render(<Results />)
-    expect(screen.getByRole('heading', { level: 1, name: /Results - 2023/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { level: 1, name: /Career Highlights/i })
+    ).toBeInTheDocument()
   })
 
-  it('mounts under the #results section landmark id', () => {
+  it('mounts under the #highlights section landmark id', () => {
     const { container } = render(<Results />)
-    expect(container.querySelector('#results')).not.toBeNull()
+    expect(container.querySelector('#highlights')).not.toBeNull()
   })
 
   it('renders four stat cards', () => {

@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
 import { testConfig } from './test.config'
 
+// Application form was removed from this portfolio. Tests are skipped until
+// a contact/application form is added.
+test.skip(true, 'Application form not present in portfolio')
+
 /**
  * Application Form Button Tests
  *

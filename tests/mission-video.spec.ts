@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
 import { testConfig } from './test.config'
 
+// Mission video was removed from this portfolio. Tests are skipped until
+// a video section is added back.
+test.skip(true, 'Mission video not present in portfolio')
+
 /**
  * Mission Video Tests
  *

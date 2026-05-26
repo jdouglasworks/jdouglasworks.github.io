@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
 import { testConfig } from './test.config'
 
+// Events section was removed from this portfolio. Tests are skipped until
+// an events section is added back.
+test.skip(true, 'Events section not present in portfolio')
+
 /**
  * Events Section Tests
  *

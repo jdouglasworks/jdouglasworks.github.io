@@ -5,11 +5,12 @@ import { testConfig } from './test.config'
  * Image Loading Tests
  *
  * These tests verify that images load correctly when the site is built.
- * The tests check that images in the header and hero section are visible
- * and load properly with successful HTTP responses.
+ * The tests check that images in the hero section are visible and load
+ * properly with successful HTTP responses.
  *
- * Note: The hero image is a local asset (/Images/figma-hero-img.webp) that
- * should load correctly in all deployment scenarios including GitHub Pages.
+ * Note: The header logo is a text span (not an img). The hero image is a
+ * local asset (/Images/figma-hero-img.webp) that should load correctly in
+ * all deployment scenarios including GitHub Pages.
  * Test expectations use values from test.config.ts for easy customization.
  */
 
@@ -18,17 +19,17 @@ test.describe('Image Loading', () => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Find the logo images
-    const headerLogo = page.locator(`header a[href="/"] img[alt="${testConfig.logo.headerAlt}"]`)
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    // Header logo is a text span — locate by link text
+    const headerLogo = page
+      .locator(`header a[href="/"]`)
+      .filter({ hasText: testConfig.logo.headerAlt })
+    const heroImage = page.locator(`#hero img[alt="${testConfig.logo.heroAlt}"]`)
 
-    // Verify both images are visible (meaning they loaded successfully)
+    // Verify header logo link is visible
     await expect(headerLogo).toBeVisible()
-    await expect(heroImage).toBeVisible()
 
-    // Verify the header logo has a src attribute
-    const headerSrc = await headerLogo.getAttribute('src')
-    expect(headerSrc).toBeTruthy()
+    // Verify hero image is visible (meaning it loaded successfully)
+    await expect(heroImage).toBeVisible()
 
     // Verify the hero image has a src attribute
     const heroSrc = await heroImage.getAttribute('src')
@@ -52,7 +53,7 @@ test.describe('Image Loading', () => {
     await page.goto('/')
 
     // Wait for hero image to be visible
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    const heroImage = page.locator(`#hero img[alt="${testConfig.logo.heroAlt}"]`)
     await expect(heroImage).toBeVisible()
 
     // Verify at least one image request was made for the hero image
@@ -72,7 +73,7 @@ test.describe('Image Loading', () => {
     await page.goto('/')
 
     // Find the hero image
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    const heroImage = page.locator(`#hero img[alt="${testConfig.logo.heroAlt}"]`)
 
     // Wait for the image to be visible
     await expect(heroImage).toBeVisible()

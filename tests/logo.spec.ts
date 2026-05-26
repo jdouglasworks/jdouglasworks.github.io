@@ -16,23 +16,21 @@ test.describe('Logo and Image Visibility', () => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Find the logo in the Header
-    // The logo is in a Link element that points to "/" with img alt text
-    const headerLogo = page.locator(`header a[href="/"] img[alt="${testConfig.logo.headerAlt}"]`)
+    // The header logo is a text span (not an img) — locate by link text
+    const headerLogo = page
+      .locator(`header a[href="/"]`)
+      .filter({ hasText: testConfig.logo.headerAlt })
 
-    // Verify the logo exists
+    // Verify the logo link exists and is visible
     await expect(headerLogo).toBeVisible()
-
-    // Verify the logo has the correct alt text
-    await expect(headerLogo).toHaveAttribute('alt', testConfig.logo.headerAlt)
   })
 
   test('should display hero section image', async ({ page }) => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Find the hero image
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    // Find the hero image (scoped to #hero to avoid matching the team photo)
+    const heroImage = page.locator(`#hero img[alt="${testConfig.logo.heroAlt}"]`)
 
     // Verify the image exists
     await expect(heroImage).toBeVisible()
@@ -45,9 +43,12 @@ test.describe('Logo and Image Visibility', () => {
     // Navigate to the homepage
     await page.goto('/')
 
-    // Find both images
-    const headerLogo = page.locator(`header a[href="/"] img[alt="${testConfig.logo.headerAlt}"]`)
-    const heroImage = page.locator(`img[alt="${testConfig.logo.heroAlt}"]`)
+    // Header logo is a text link; hero section still uses an <img>
+    const headerLogo = page
+      .locator(`header a[href="/"]`)
+      .filter({ hasText: testConfig.logo.headerAlt })
+    // Scope to #hero to avoid matching the team member photo (same alt text)
+    const heroImage = page.locator(`#hero img[alt="${testConfig.logo.heroAlt}"]`)
 
     // Verify both are visible simultaneously
     await expect(headerLogo).toBeVisible()

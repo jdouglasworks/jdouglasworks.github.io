@@ -7,18 +7,13 @@ describe('Mission', () => {
     render(<Mission />)
     expect(
       screen.getByRole('heading', {
-        name: /Free For Charity has a simple mission with broad implications/i,
+        name: /About Me/i,
       })
     ).toBeInTheDocument()
   })
 
-  it('mounts under the #mission section landmark id', () => {
+  it('mounts under the #about section landmark id', () => {
     const { container } = render(<Mission />)
-    expect(container.querySelector('#mission')).not.toBeNull()
-  })
-
-  it('renders the embedded mission video element', () => {
-    const { container } = render(<Mission />)
-    expect(container.querySelector('video')).not.toBeNull()
+    expect(container.querySelector('#about')).not.toBeNull()
   })
 })

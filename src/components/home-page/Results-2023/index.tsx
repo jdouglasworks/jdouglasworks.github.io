@@ -13,13 +13,13 @@ const index = () => {
         </h1>
         <div className="pt-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px]">
           <ResultCard
-            title="20+"
+            title="20"
             description="Years of DoD programming and cybersecurity experience"
           />
-          <ResultCard title="13+" description="Professional certifications" />
+          <ResultCard title="13" description="Professional certifications" />
           <ResultCard title="2" description="Master's degrees" />
           <ResultCard
-            title="10+"
+            title="10"
             description="Years of experience in data warehousing and project management"
           />
         </div>
