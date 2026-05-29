@@ -67,7 +67,7 @@ export const siteConfig: SiteConfig = {
     'Cybersecurity professional with 20+ years of DoD programming, project management, and information security experience.',
   url: 'https://jdouglasworks.github.io',
   twitterHandle: '',
-  contactEmail: 'dougworks@freeforcharity.org',
+  contactEmail: 'dougworks@gmail.com',
   keywords: [
     'cybersecurity',
     'information security',
