@@ -93,6 +93,7 @@ test.describe('Results 2023 Animated Numbers', () => {
     const page = await context.newPage()
 
     await page.goto('/')
+    await page.waitForLoadState('networkidle')
     const resultsHeading = page.locator(
       `h1:has-text("${testConfig.animatedNumbers.sectionHeading}")`
     )

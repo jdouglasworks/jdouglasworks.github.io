@@ -18,6 +18,7 @@ test.describe('prefers-reduced-motion', () => {
   test('Results-2023 stat numbers settle without a multi-frame animation', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.goto('/')
+    await page.waitForLoadState('networkidle')
 
     // Scroll Results-2023 into view so AnimatedNumber's useInView fires.
     await page.locator('#highlights').scrollIntoViewIfNeeded()
